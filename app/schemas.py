@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 class BookBase(BaseModel):
     title: str
@@ -12,5 +12,4 @@ class BookCreate(BookBase):
 class Book(BookBase):
     id: int
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
