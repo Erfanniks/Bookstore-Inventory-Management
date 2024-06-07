@@ -1,8 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded and parsed');
+    
     fetch('http://127.0.0.1:8000/books/')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log('Fetched data:', data);
             const booksContainer = document.getElementById('books-container');
+            booksContainer.innerHTML = '';  // Clear any existing content
             data.forEach(book => {
                 const bookElement = document.createElement('div');
                 bookElement.className = 'book';
