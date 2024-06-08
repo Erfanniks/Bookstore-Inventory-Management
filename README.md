@@ -41,5 +41,21 @@ A FastAPI-based API for managing bookstore inventory.
     docker run -d -p 8000:8000 bookstore_inventory
     ```
 
+## Kubernetes Setup
+1. Ensure you have `kubectl` and a Kubernetes cluster running, e.g., using `kind`.
+
+2. Apply the Kubernetes manifests:
+    ```bash
+    kubectl apply -f k8s/configmap.yaml
+    kubectl apply -f k8s/secret.yaml
+    kubectl apply -f k8s/deployment.yaml
+    kubectl apply -f k8s/service.yaml
+    ```
+
+3. Use port forwarding to access the service:
+    ```bash
+    kubectl port-forward svc/bookstore-service 8000:8000
+    ```
+
 ## Usage
-- Access the API documentation at `http://localhost:8000/docs`
+- Access the application at `http://localhost:8000`
