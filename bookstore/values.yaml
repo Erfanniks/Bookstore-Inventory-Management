@@ -1,0 +1,40 @@
+replicaCount: 3
+
+image:
+  repository: erfanniks/bookstore
+  pullPolicy: IfNotPresent
+  tag: latest
+
+service:
+  type: NodePort
+  port: 8000
+
+env:
+  DATABASE_URL: "sqlite:///./test.db"
+  SECRET_KEY: "c2VjcmV0X2tleQ=="
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+serviceAccount:
+  create: true
+  name: ""
+
+ingress:
+  enabled: false
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
