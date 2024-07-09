@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "bookstore-project-428112",
+  "private_key_id": "4be30e84a4b443a3dd2164d3565fd37605db4e2d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDaf26hS5yu3sHd\nrl+tuzf5IcV2y+17BId7PaseXOt9tc/R8tK6wD+Ww3b2HmNrm7QJKEcYl9v94zFW\nnvroWuMUYKet5zJWsKAMiKi6682NzLYmTPc9PZmu7bUAvqU1Hx6f8azO7Z+D2RTP\nxlOArjvx2MvEeG71YjDJatQtudWwzUvkTvM1XXInC1qFpoEDQyQ1SmosMK+JEymP\nXsJyLIQQ6vYto3YXZra8tvKXzm1lmTadr4OKLlXq3Eti54phYCDVGjd55tYzAqcR\nr4XewtwRNPr+Nz6V4Fkkj/RynlztUY+5EyN9vw4miJMRWy2VMv2vw1UfM5Z7FOZt\nUlrfipGVAgMBAAECggEADmsl3Ql9EbIb93nEERYfc7aFjhkXdwx9t0WCxwppNN68\nU9WzD8VTfOqxrTykoWuBNjB8/pO43fhx30427wHeZdAaCJkO4pcdvK4A+nLImgCm\nDYF7OESaIWfIz7+E7ew7jGD5nx8hrWT0IWDsTjvRM1yz16d95P4Bi60byteuURAf\n5+N62b+2NOoGb8P7NPrH+T+l7bsR+TQCXhwfBeSOeH0D9PXpV36gnHwpUEYcqwqL\nMma7bLj1OT8cH7w+eOkI9YxOsT/5H7eB/6CQAFbttfXKici4nl5bYzpmYeXX7cCi\nkMnjqdsnex865G5fTDzVbpnGxzDowDFeuPi68JlEAQKBgQDwKf2zWDdnCk3QkcTN\n9KolyGYvMJe9WS5JE9ghE+WF/VW9CxSo6B4JHhDLleKmeGcPpfRBr6JQXgVStCoG\n9rg0IVDX3OHO3tvr1H2ZjEXb7r2tH85LT27wOCN90CQh2hcREi0Kj3ZAVPAbpMIO\n8lQxbLbs62dyuKCQnj14OxW8AQKBgQDo57YWXriRAIVInVwC0s/txnW75mu5crXj\nJ20rQqEBW+8Nt6z8yEmxapJVkUsvy3Udx/OAg29Um07JwDIRtdUGBIbH1gseSOlR\nyps1CIO3UU2leMIaPALwOLkGSAPxBHxBY/e5rD/Q7MScFeC3XY+Z0Utllbzmj8Mk\ndxPTN7gllQKBgQDftr3U6j/xg++ocaDaGSbFuz80hhdTElfDSvDxHw+XGL1dM40z\nKcWQyKjse9p9J3sZYIV/CpQwOOTMfXcItZoxNTeRXPgbNA24SGAXQEty65lUQ2Rv\nUrcMnb6x28lMn1MNW9kJFUoZ8wUXOwpp0eILiDF90Gq0urcW/9BSxvcgAQKBgCgf\nUrUD2FPSfSOHSESMQJm7qKiYB1LJOiBJuHrNXaM4TTRVwg1CC7/ulgr7nrI7II/i\n1EX9Xn56ytXisD1wz6Pbv8RJUV0EPn2Co749G0PHU9L/vKB8Wh08CFPWsCcjGKzD\nJffsfonlX/Frq2yrR4O+FHkJlKM7fOiZQucOIEEJAoGBAIjbaoOVulXr7DyFWvSb\nUojxm2LZmGJfDokCizcnCV5Ibpqmct6FqTY+9Qnwe3CmSsdyExQPDaTZ+euIGQuW\nMxKVHPJLMWfz4m5s29NeA9qMK8kGze1WXncscvMpYhbrxfoshRBFjlkRp+HbVInM\nQtVvavVb+UlRJq3c6oV/tm4z\n-----END PRIVATE KEY-----\n",
+  "client_email": "terraform-new@bookstore-project-428112.iam.gserviceaccount.com",
+  "client_id": "109514585925671895867",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/terraform-new%40bookstore-project-428112.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

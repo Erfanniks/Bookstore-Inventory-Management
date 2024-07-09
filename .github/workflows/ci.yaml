@@ -4,21 +4,50 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.9'
+
     - name: Install dependencies
       run: |
         python -m venv env
         source env/bin/activate
         pip install -r requirements.txt
+
     - name: Run tests
       run: |
         source env/bin/activate
         pytest
+
+    - name: Build Docker image
+      run: |
+        docker build -t bookstore_inventory .
+
+    - name: Push Docker image to Docker Hub
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+        echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+        docker tag bookstore_inventory $DOCKER_USERNAME/bookstore_inventory:latest
+        docker push $DOCKER_USERNAME/bookstore_inventory:latest
+
+    - name: Set up kubectl
+      uses: azure/setup-kubectl@v1
+      with:
+        version: 'latest'
+
+    - name: Deploy to Kubernetes
+      env:
+        KUBECONFIG: ${{ secrets.KUBECONFIG }}
+      run: |
+        kubectl apply -f k8s/configmap.yaml
+        kubectl apply -f k8s/secret.yaml
+        kubectl apply -f k8s/deployment.yaml
+        kubectl apply -f k8s/service.yaml

@@ -12,8 +12,12 @@ A FastAPI-based API for managing bookstore inventory.
 - FastAPI
 - SQLAlchemy
 - Uvicorn
+- Docker
+- Kubernetes
+- Terraform
+- Helm
 
-## Setup
+## Local Setup
 1. Create a virtual environment:
     ```bash
     python -m venv env
@@ -42,9 +46,14 @@ A FastAPI-based API for managing bookstore inventory.
     ```
 
 ## Kubernetes Setup
-1. Ensure you have `kubectl` and a Kubernetes cluster running, e.g., using `kind`.
+1. Ensure you have `kubectl` and a Kubernetes cluster running.
 
-2. Apply the Kubernetes manifests:
+2. If using `kind` for a local cluster:
+    ```bash
+    kind create cluster
+    ```
+
+3. Apply the Kubernetes manifests (for manual setup):
     ```bash
     kubectl apply -f k8s/configmap.yaml
     kubectl apply -f k8s/secret.yaml
@@ -52,10 +61,65 @@ A FastAPI-based API for managing bookstore inventory.
     kubectl apply -f k8s/service.yaml
     ```
 
-3. Use port forwarding to access the service:
+4. Use port forwarding to access the service:
     ```bash
     kubectl port-forward svc/bookstore-service 8000:8000
     ```
 
+## Helm Setup
+1. Ensure Helm is installed:
+    ```bash
+    brew install helm
+    ```
+
+2. Navigate to the Helm chart directory:
+    ```bash
+    cd bookstore
+    ```
+
+3. Deploy the Helm chart:
+    ```bash
+    helm install bookstore-release .
+    ```
+
+4. If updating an existing release:
+    ```bash
+    helm upgrade bookstore-release .
+    ```
+
+5. Use port forwarding to access the service:
+    ```bash
+    kubectl port-forward svc/bookstore-release 8000:8000
+    ```
+
+## GCP and Terraform Setup
+1. Ensure you have `gcloud` and `terraform` installed.
+
+2. Initialize Terraform and apply the configuration to create a GKE cluster:
+    ```bash
+    terraform init
+    terraform apply
+    ```
+
+3. Configure `kubectl` to use the new GKE cluster:
+    ```bash
+    gcloud container clusters get-credentials bookstore-cluster --region us-central1-a --project your-gcp-project-id
+    ```
+
+4. Deploy the application using Helm as described above.
+
 ## Usage
-- Access the application at `http://localhost:8000`
+- Access the application at `http://localhost:8000` when using port forwarding.
+- For GKE, access the application using the external IP of the service if configured.
+
+## Monitoring and Logging
+- Set up monitoring and logging using tools like Prometheus, Grafana, and Google Cloud Monitoring.
+
+## Optimization and Scaling
+- Fine-tune Kubernetes resources.
+- Implement autoscaling based on load.
+
+## Documentation and Maintenance
+- Document setup, usage, and maintenance procedures.
+- Regularly update dependencies, Docker images, and Kubernetes manifests.
+- Perform regular backups of critical data.
