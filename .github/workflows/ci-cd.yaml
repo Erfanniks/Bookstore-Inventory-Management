@@ -58,10 +58,9 @@ jobs:
         version: 'latest'
         project_id: ${{ secrets.GCP_PROJECT_ID }}
 
-    - name: Authenticate with service account
+    - name: Decode and write service account key
       run: |
-        echo "${{ secrets.GCP_SA_KEY }}" > $HOME/gcloud-key.json
-        cat $HOME/gcloud-key.json  # Debugging step to output JSON key file
+        echo "${{ secrets.GCP_SA_KEY }}" | base64 --decode > $HOME/gcloud-key.json
 
     - name: Activate Service Account
       run: |
