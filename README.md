@@ -124,3 +124,4 @@ A FastAPI-based API for managing bookstore inventory.
 - Regularly update dependencies, Docker images, and Kubernetes manifests.
 - Perform regular backups of critical data.
 Testing GitHub Actions
+Trigger GitHub Actions
