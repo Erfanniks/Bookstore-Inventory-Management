@@ -125,3 +125,4 @@ A FastAPI-based API for managing bookstore inventory.
 - Perform regular backups of critical data.
 Testing GitHub Actions
 Trigger GitHub Actions
+Trigger GitHub Actions
