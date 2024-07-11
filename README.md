@@ -108,6 +108,20 @@ A FastAPI-based API for managing bookstore inventory.
 
 4. Deploy the application using Helm as described above.
 
+## CI/CD Pipeline Setup
+This project uses GitHub Actions for CI/CD.
+
+1. Ensure the following secrets are configured in your GitHub repository:
+    - `DOCKER_USERNAME`
+    - `DOCKER_PASSWORD`
+    - `DOCKER_IMAGE`
+    - `GCP_PROJECT_ID`
+    - `GCP_SA_KEY` (Base64 encoded GCP service account key)
+
+2. The CI/CD pipeline will:
+    - Build and push the Docker image on code changes.
+    - Deploy the application to GKE using Helm.
+
 ## Usage
 - Access the application at `http://localhost:8000` when using port forwarding.
 - For GKE, access the application using the external IP of the service if configured.
@@ -123,6 +137,13 @@ A FastAPI-based API for managing bookstore inventory.
 - Document setup, usage, and maintenance procedures.
 - Regularly update dependencies, Docker images, and Kubernetes manifests.
 - Perform regular backups of critical data.
-Testing GitHub Actions
-Trigger GitHub Actions
-Trigger GitHub Actions
+
+## Contributing
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature-name`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/your-feature-name`).
+5. Create a new Pull Request.
+
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
