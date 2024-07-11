@@ -80,6 +80,10 @@ jobs:
       run: |
         gcloud components install gke-gcloud-auth-plugin --quiet
 
+    - name: Delete existing secret (if any)
+      run: |
+        kubectl delete secret bookstore-secret --ignore-not-found
+
     - name: Deploy with Helm
       run: |
         helm upgrade --install bookstore ./bookstore \
