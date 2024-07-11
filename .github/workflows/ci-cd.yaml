@@ -60,7 +60,7 @@ jobs:
 
     - name: Authenticate with service account
       run: |
-        echo "${{ secrets.GCP_SA_KEY }}" > $HOME/gcloud-key.json
+        printf "%s" "${{ secrets.GCP_SA_KEY }}" > $HOME/gcloud-key.json
 
     - name: Activate Service Account
       run: |
