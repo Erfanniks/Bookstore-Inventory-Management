@@ -84,6 +84,10 @@ jobs:
       run: |
         kubectl delete secret bookstore-secret --ignore-not-found
 
+    - name: Delete existing configmap (if any)
+      run: |
+        kubectl delete configmap bookstore-config --ignore-not-found
+
     - name: Deploy with Helm
       run: |
         helm upgrade --install bookstore ./bookstore \
