@@ -57,10 +57,10 @@ jobs:
       with:
         version: 'latest'
         project_id: ${{ secrets.GCP_PROJECT_ID }}
-        service_account_key: ${{ secrets.GCP_SA_KEY }}
 
     - name: Authenticate with service account
-      run: echo "${{ secrets.GCP_SA_KEY }}" > $HOME/gcloud-key.json
+      run: |
+        echo "${{ secrets.GCP_SA_KEY }}" > $HOME/gcloud-key.json
 
     - name: Activate Service Account
       run: |
